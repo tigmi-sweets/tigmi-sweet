@@ -61,7 +61,34 @@ body { font-family: 'Inter', system-ui, sans-serif; }
         <nav class="flex space-x-4 bg-amber-100 dark:bg-gray-800 px-4 py-2 rounded-full shadow">
             <a href="#menu" class="text-amber-900 dark:text-amber-300 font-semibold hover:underline">القائمة</a>
             <a href="#social" class="text-amber-900 dark:text-amber-300 font-semibold hover:underline">تابعنا</a>
-            <a href="#order" class="text-amber-900 dark:text-amber-300 font-semibold hover:underline">الطلب</a>
+            <a href="#order" class="order-btn">الطلب</a>
+
+<style>
+  .order-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 18px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: #78350f;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .order-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.45);
+    color: #451a03;
+  }
+
+  .order-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(245, 158, 11, 0.3);
+  }
+</style>
+
         </nav>
     </div>
 </header>
@@ -69,7 +96,7 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 
 <!-- Dark Mode Toggle -->
 <button onclick="toggleDarkMode()"
-        class="fixed top-11 right-6 z-50 bg-white dark:bg-gray-800 shadow-lg p-3 rounded-full">
+        class="fixed top-[80px] right-6 z-50 bg-white dark:bg-gray-800 shadow-lg p-3 rounded-full">
     <i data-feather="moon" class="dark:hidden"></i>
     <i data-feather="sun" class="hidden dark:block text-yellow-400"></i>
 </button>
@@ -420,5 +447,6 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 
 </body>
 </html>
+
 
 
