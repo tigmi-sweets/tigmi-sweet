@@ -344,16 +344,42 @@ body { font-family: 'Inter', system-ui, sans-serif; }
         </div>
     </section>
 
-    <!-- ORDER -->
-<section id="order" class="text-center fade-up">
-    <a href="https://wa.me/212604530866?text=مرحبا%20👋%20أود%20طلب%20هذا%20المنتج.%20من%20فضلكم%20تواصلوا%20معي."
-       target="_blank"
-       class="pulse relative inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-12 py-4 rounded-full text-lg font-semibold shadow-xl transition overflow-hidden">
-        <i data-feather="message-circle"></i>
-        Order on WhatsApp الطلب على الواتساب
-        <span class="absolute w-2 h-2 bg-yellow-300 rounded-full top-2 left-2 animate-sparkle"></span>
-        <span class="absolute w-2 h-2 bg-yellow-300 rounded-full bottom-2 right-2 animate-sparkle delay-200"></span>
-    </a>
+  <!-- ORDER SECTION -->
+    
+<section id="order" class="text-center fade-up mt-16">
+    <option value="" disabled selected>اختر المنتج الذي تريده</option>  
+<select id="product" class="px-4 py-2 rounded-lg border">
+    <option value="الشباكية">الشباكية</option>
+    <option value="الحرشة">الحرشة</option>
+    <option value="البطبوط">البطبوط</option>
+    <option value="بشنيخة">بشنيخة</option>
+    <option value="ريشبونا">ريشبونا</option>
+    <option value="بسطيلة بالدجاج">بسطيلة بالدجاج</option>
+    <option value="مملحات">مملحات</option>
+    <option value="بسطيلة بالسمك">بسطيلة بالسمك</option>
+    <option value="كيش مملحة">كيش مملحة</option>
+    <option value="بليغات">بليغات</option>
+    <option value="كريب مملح">كريب مملح</option>
+    <option value="بيدزا صغيرة">بيدزا صغيرة</option>
+    <option value="بريوات">بريوات</option>
+    <option value="بريوات معسلة">بريوات معسلة</option>
+    <option value="بريوش">بريوش</option>
+    <option value="مسمن معمر">مسمن معمر</option>
+    <option value="بغرير">بغرير</option>
+    <option value="كيك الشكلاطة">كيك الشكلاطة</option>
+</select>
+
+<br><br>
+
+<a href="#"
+   onclick="orderWhatsApp()"
+   class="pulse relative inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-12 py-4 rounded-full text-lg font-semibold shadow-xl transition overflow-hidden">
+    <i data-feather="message-circle"></i>
+    Order on WhatsApp الطلب على الواتساب
+    <span class="absolute w-2 h-2 bg-yellow-300 rounded-full top-2 left-2 animate-sparkle"></span>
+    <span class="absolute w-2 h-2 bg-yellow-300 rounded-full bottom-2 right-2 animate-sparkle delay-200"></span>
+</a>
+
 </section>
 
 
@@ -444,9 +470,23 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 
     typeAvatarMessage();
 </script>
+<script>
+function orderWhatsApp() {
+
+    let phone = "212604530866";
+    let product = document.getElementById("product").value;
+
+    let message = "مرحبا 👋 أريد طلب " + product + " من فضلك";
+
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
+
 
 
 
